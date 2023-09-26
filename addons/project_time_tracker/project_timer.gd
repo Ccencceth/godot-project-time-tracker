@@ -4,8 +4,8 @@ extends Control
 
 @export var total_time_label_path : NodePath
 @export var session_time_label_path : NodePath
-var session_time = 0
-var total_time = 0
+var session_time = 0.0
+var total_time = 0.0
 const PATH_TO_SAVE_FILE = "user://time_in_project.save"
 @onready var total_time_label : Label = get_node(total_time_label_path)
 @onready var session_time_label : Label = get_node(session_time_label_path)
@@ -37,16 +37,16 @@ func read_file():
 	
 	var save = FileAccess.open(PATH_TO_SAVE_FILE, FileAccess.READ)
 	
-	var json_string = save.get_line()
+	var json_string := ""
+	while save.get_position() < save.get_length():
+		json_string += save.get_line()
 	
 	var parsed_result = JSON.parse_string(json_string)
 	
-	print(parsed_result)
-	
-	total_time = parsed_result['time']
+	total_time = float(parsed_result['time'])
 	
 
 
 func save_file():
 	var save = FileAccess.open(PATH_TO_SAVE_FILE, FileAccess.WRITE)
-	save.store_line(JSON.stringify({'time': total_time}))
+	save.store_line(JSON.stringify({'time': roundf(total_time)}, "\t"))
