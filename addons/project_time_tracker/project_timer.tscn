@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://addons/project_time_tracker/project_timer.gd" id="1_1r5vr"]
 
-[node name="ProjectTimer" type="Control"]
+[node name="Project Timer" type="Control"]
 custom_minimum_size = Vector2(200, 91)
 layout_mode = 3
 anchors_preset = 15
@@ -11,6 +11,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1r5vr")
+total_time_label_path = NodePath("VBoxContainer/TimeInProject")
+session_time_label_path = NodePath("VBoxContainer/TimeThisSession")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -22,12 +24,12 @@ grow_vertical = 2
 
 [node name="TimeInProject" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Time in project: 0h:0m:0s"
+text = "Time in project: 00:08:39"
 autowrap_mode = 3
 
-[node name="TimeInSession" type="Label" parent="VBoxContainer"]
+[node name="TimeThisSession" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Time in session: 0h:0m:0s"
+text = "Time this session: 519.921738333105"
 autowrap_mode = 3
 
 [node name="Button" type="Button" parent="VBoxContainer"]
