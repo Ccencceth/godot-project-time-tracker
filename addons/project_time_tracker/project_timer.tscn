@@ -1,19 +1,35 @@
-[gd_scene format=3 uid="uid://dsb6vxpbduj7f"]
+[gd_scene load_steps=2 format=3 uid="uid://dsb6vxpbduj7f"]
+
+[ext_resource type="Script" path="res://addons/project_time_tracker/project_timer.gd" id="1_1r5vr"]
 
 [node name="ProjectTimer" type="Control"]
+custom_minimum_size = Vector2(200, 91)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1r5vr")
 
-[node name="TimeInProject" type="Label" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TimeInProject" type="Label" parent="VBoxContainer"]
+layout_mode = 2
 text = "Time in project: 0h:0m:0s"
 autowrap_mode = 3
+
+[node name="TimeInSession" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Time in session: 0h:0m:0s"
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Settings"
