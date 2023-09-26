@@ -24,12 +24,12 @@ grow_vertical = 2
 
 [node name="TimeInProject" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Time in project: 00:08:39"
+text = "Time in project: 00:00:00"
 autowrap_mode = 3
 
 [node name="TimeThisSession" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Time this session: 519.921738333105"
+text = "Time this session: 00:00:00"
 autowrap_mode = 3
 
 [node name="Button" type="Button" parent="VBoxContainer"]
